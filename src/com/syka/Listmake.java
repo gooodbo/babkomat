@@ -32,9 +32,6 @@ public class Listmake {
         return userList;
     }
 
-    public String getUserListName(int userNumber) {
-        return userList.get(userNumber).getUserName();
-    }
 
     public String getUser(int i) {
 
@@ -44,5 +41,10 @@ public class Listmake {
     public int getPassword(int i) {
 
         return userList.get(i).getPassword();
+    }
+
+    public int getBalance(int i) {
+
+        return userList.get(i).getBalance();
     }
 }

@@ -5,9 +5,18 @@ import java.util.Scanner;
 
 public class Common {
 
+    private int countPass;
+
+    public int getCountPass() {
+        return countPass;
+    }
+
+    public void setCountPass(int countPass) {
+        this.countPass = countPass;
+    }
 
     public void checkName() throws IOException {
-        int countPass = 0;
+
         int countOfUserAttempt = 3, arrayCount;
         int a;
         String username = "";
@@ -26,9 +35,8 @@ public class Common {
 
                 if (username.equals(userList.getUser(a))) {
                     System.out.println("Пользователь найден!");
-                    countPass = a;
+                    setCountPass(a);
                     i = countOfUserAttempt;
-                    break;
                 }
             }
 
@@ -39,20 +47,19 @@ public class Common {
         }
     }
 
-    public void checkPassword() {
-        int countPass = 0;
+    public void checkPassword() throws IOException {
         int password = 0;
         int countOfPasswordAttempt = 3;
         Listmake userList = new Listmake();
+        userList.readUsers();
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Password: " + userList.getPassword(getCountPass()));
 
         for (int i = 0; i < countOfPasswordAttempt; i++) {
             System.out.println("Введите пароль: ");
-            Scanner scan = new Scanner(System.in);
-
             if (scan.hasNextInt()) password = scan.nextInt();
-
-
-            if (password == userList.getPassword(countPass)) {
+            if (password == userList.getPassword(getCountPass())) {
                 System.out.println("Добро пожаловать! ");
                 i = countOfPasswordAttempt;
                 break;
@@ -64,4 +71,5 @@ public class Common {
             }
         }
     }
+
 }

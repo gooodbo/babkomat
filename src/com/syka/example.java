@@ -6,9 +6,10 @@ import java.util.ArrayList;
 public class example {
 
     public static void main(String[] args) throws IOException {
-
-        Common show = new Common();
-        show.checkName();
-        show.checkPassword();
+        Common check = new Common();
+        Menu show = new Menu();
+        check.checkName();
+        check.checkPassword();
+        show.menu();
     }
 }
