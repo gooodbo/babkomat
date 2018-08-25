@@ -7,13 +7,6 @@ public class Common {
 
     private int countPass;
 
-    public int getCountPass() {
-        return countPass;
-    }
-
-    public void setCountPass(int countPass) {
-        this.countPass = countPass;
-    }
 
     public void checkName() throws IOException {
 
@@ -55,6 +48,7 @@ public class Common {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Password: " + userList.getPassword(getCountPass()));
+        System.out.println("Balance: " + userList.getBalance(getCountPass()));
 
         for (int i = 0; i < countOfPasswordAttempt; i++) {
             System.out.println("Введите пароль: ");
@@ -72,4 +66,11 @@ public class Common {
         }
     }
 
+    public int getCountPass() {
+        return countPass;
+    }
+
+    public void setCountPass(int countPass) {
+        this.countPass = countPass;
+    }
 }
