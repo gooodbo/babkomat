@@ -14,7 +14,7 @@ public class Listmake {
 
     public void readUsers() throws IOException {
         String s = null;
-        java.io.FileReader fileReader = new java.io.FileReader("/home/ivasik/Рабочий стол/IdeaProg/Bank/bank.txt");
+        java.io.FileReader fileReader = new java.io.FileReader("//home/ivasik/Стол/bank.txt");
         BufferedReader bufferedReader = new BufferedReader(fileReader);
 
         while ((s = bufferedReader.readLine()) != null) {
@@ -25,7 +25,7 @@ public class Listmake {
             user.setBalance(Integer.parseInt(fileData[2]));
             userList.add(user);
         }
-
+        bufferedReader.close();
     }
 
     public ArrayList<User> getUserList() {
@@ -46,5 +46,9 @@ public class Listmake {
     public int getBalance(int i) {
 
         return userList.get(i).getBalance();
+    }
+
+    public void setBalance(int i, int balance) {
+        this.userList.get(i).setBalance(balance);
     }
 }

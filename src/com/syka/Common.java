@@ -19,7 +19,7 @@ public class Common {
 
         for (int i = 0; i < countOfUserAttempt; i++) {
 
-            System.out.println("Введите пользователя: ");
+            System.out.print("Введите пользователя: ");
             Scanner scan = new Scanner(System.in);
 
             if (scan.hasNextLine()) username = scan.nextLine();
@@ -27,7 +27,6 @@ public class Common {
             for (a = 0; a < arrayCount; a++) {
 
                 if (username.equals(userList.getUser(a))) {
-                    System.out.println("Пользователь найден!");
                     setCountPass(a);
                     i = countOfUserAttempt;
                 }
@@ -46,15 +45,13 @@ public class Common {
         Listmake userList = new Listmake();
         userList.readUsers();
         Scanner scan = new Scanner(System.in);
-
+        System.out.println("------------------------------------------");
         System.out.println("Password: " + userList.getPassword(getCountPass()));
-        System.out.println("Balance: " + userList.getBalance(getCountPass()));
 
         for (int i = 0; i < countOfPasswordAttempt; i++) {
-            System.out.println("Введите пароль: ");
+            System.out.print("Введите пароль: ");
             if (scan.hasNextInt()) password = scan.nextInt();
             if (password == userList.getPassword(getCountPass())) {
-                System.out.println("Добро пожаловать! ");
                 i = countOfPasswordAttempt;
                 break;
             }

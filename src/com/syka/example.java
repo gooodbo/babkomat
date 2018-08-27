@@ -7,9 +7,10 @@ public class example {
 
     public static void main(String[] args) throws IOException {
         Common check = new Common();
-        Menu show = new Menu();
+        Menu show = new Menu(check);
         check.checkName();
         check.checkPassword();
         show.menu();
+
     }
 }
